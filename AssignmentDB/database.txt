@@ -1,0 +1,190 @@
+
+MariaDB [(none)]> create database shubham
+    -> ;
+Query OK, 1 row affected (0.027 sec)
+
+MariaDB [(none)]> use shubham;
+Database changed
+MariaDB [shubham]> create table students;
+ERROR 1113 (42000): A table must have at least 1 column
+MariaDB [shubham]> (
+    ->     -> id int not NULL,
+    ->     -> name varchar(100) not null,
+    ->     -> phone_no not null,
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-> id int not NULL,
+    -> name varchar(100) not null,
+    -> phone_no not null,' at line 2
+MariaDB [shubham]> create table employee(
+    -> id int not null,
+    -> name varchar(100) not null,
+    -> address varchar(100),
+    -> phoneNo not null,
+    -> primary key(id));
+ERROR 4161 (HY000): Unknown data type: 'not'
+MariaDB [shubham]> create table employee( id int not null, name varchar(100) not null, address varchar(100), phoneNo int not null, primary key(id));
+Query OK, 0 rows affected (0.093 sec)
+
+MariaDB [shubham]> show tables;
++-------------------+
+| Tables_in_shubham |
++-------------------+
+| employee          |
++-------------------+
+1 row in set (0.008 sec)
+
+MariaDB [shubham]> desc tables;
+ERROR 1146 (42S02): Table 'shubham.tables' doesn't exist
+MariaDB [shubham]> desc employee;
++---------+--------------+------+-----+---------+-------+
+| Field   | Type         | Null | Key | Default | Extra |
++---------+--------------+------+-----+---------+-------+
+| id      | int(11)      | NO   | PRI | NULL    |       |
+| name    | varchar(100) | NO   |     | NULL    |       |
+| address | varchar(100) | YES  |     | NULL    |       |
+| phoneNo | int(11)      | NO   |     | NULL    |       |
++---------+--------------+------+-----+---------+-------+
+4 rows in set (0.024 sec)
+
+MariaDB [shubham]> insert into employee(id,name,address,phoneNo) values(1,'shubham','delhi',12345),(2,'riya','gurugram',7654),(3,'bava','bihar',3455),(4,'deva','up',3456);
+Query OK, 4 rows affected (0.065 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+MariaDB [shubham]> select* from employee;
++----+---------+----------+---------+
+| id | name    | address  | phoneNo |
++----+---------+----------+---------+
+|  1 | shubham | delhi    |   12345 |
+|  2 | riya    | gurugram |    7654 |
+|  3 | bava    | bihar    |    3455 |
+|  4 | deva    | up       |    3456 |
++----+---------+----------+---------+
+4 rows in set (0.069 sec)
+
+MariaDB [shubham]> update employee
+    -> set name = "akshay"
+    -> where id=4;
+Query OK, 1 row affected (0.018 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [shubham]> select* from employee;
++----+---------+----------+---------+
+| id | name    | address  | phoneNo |
++----+---------+----------+---------+
+|  1 | shubham | delhi    |   12345 |
+|  2 | riya    | gurugram |    7654 |
+|  3 | bava    | bihar    |    3455 |
+|  4 | akshay  | up       |    3456 |
++----+---------+----------+---------+
+4 rows in set (0.006 sec)
+
+MariaDB [shubham]> delete from employee
+    -> where id=4;
+Query OK, 1 row affected (0.002 sec)
+
+MariaDB [shubham]> select* from employee;
++----+---------+----------+---------+
+| id | name    | address  | phoneNo |
++----+---------+----------+---------+
+|  1 | shubham | delhi    |   12345 |
+|  2 | riya    | gurugram |    7654 |
+|  3 | bava    | bihar    |    3455 |
++----+---------+----------+---------+
+3 rows in set (0.000 sec)
+
+MariaDB [shubham]> 
+
+MariaDB [(none)]> create database shubham
+    -> ;
+Query OK, 1 row affected (0.027 sec)
+
+MariaDB [(none)]> use shubham;
+Database changed
+MariaDB [shubham]> create table students;
+ERROR 1113 (42000): A table must have at least 1 column
+MariaDB [shubham]> (
+    ->     -> id int not NULL,
+    ->     -> name varchar(100) not null,
+    ->     -> phone_no not null,
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-> id int not NULL,
+    -> name varchar(100) not null,
+    -> phone_no not null,' at line 2
+MariaDB [shubham]> create table employee(
+    -> id int not null,
+    -> name varchar(100) not null,
+    -> address varchar(100),
+    -> phoneNo not null,
+    -> primary key(id));
+ERROR 4161 (HY000): Unknown data type: 'not'
+MariaDB [shubham]> create table employee( id int not null, name varchar(100) not null, address varchar(100), phoneNo int not null, primary key(id));
+Query OK, 0 rows affected (0.093 sec)
+
+MariaDB [shubham]> show tables;
++-------------------+
+| Tables_in_shubham |
++-------------------+
+| employee          |
++-------------------+
+1 row in set (0.008 sec)
+
+MariaDB [shubham]> desc tables;
+ERROR 1146 (42S02): Table 'shubham.tables' doesn't exist
+MariaDB [shubham]> desc employee;
++---------+--------------+------+-----+---------+-------+
+| Field   | Type         | Null | Key | Default | Extra |
++---------+--------------+------+-----+---------+-------+
+| id      | int(11)      | NO   | PRI | NULL    |       |
+| name    | varchar(100) | NO   |     | NULL    |       |
+| address | varchar(100) | YES  |     | NULL    |       |
+| phoneNo | int(11)      | NO   |     | NULL    |       |
++---------+--------------+------+-----+---------+-------+
+4 rows in set (0.024 sec)
+
+MariaDB [shubham]> insert into employee(id,name,address,phoneNo) values(1,'shubham','delhi',12345),(2,'riya','gurugram',7654),(3,'bava','bihar',3455),(4,'deva','up',3456);
+Query OK, 4 rows affected (0.065 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+MariaDB [shubham]> select* from employee;
++----+---------+----------+---------+
+| id | name    | address  | phoneNo |
++----+---------+----------+---------+
+|  1 | shubham | delhi    |   12345 |
+|  2 | riya    | gurugram |    7654 |
+|  3 | bava    | bihar    |    3455 |
+|  4 | deva    | up       |    3456 |
++----+---------+----------+---------+
+4 rows in set (0.069 sec)
+
+MariaDB [shubham]> update employee
+    -> set name = "akshay"
+    -> where id=4;
+Query OK, 1 row affected (0.018 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [shubham]> select* from employee;
++----+---------+----------+---------+
+| id | name    | address  | phoneNo |
++----+---------+----------+---------+
+|  1 | shubham | delhi    |   12345 |
+|  2 | riya    | gurugram |    7654 |
+|  3 | bava    | bihar    |    3455 |
+|  4 | akshay  | up       |    3456 |
++----+---------+----------+---------+
+4 rows in set (0.006 sec)
+
+MariaDB [shubham]> delete from employee
+    -> where id=4;
+Query OK, 1 row affected (0.002 sec)
+
+MariaDB [shubham]> select* from employee;
++----+---------+----------+---------+
+| id | name    | address  | phoneNo |
++----+---------+----------+---------+
+|  1 | shubham | delhi    |   12345 |
+|  2 | riya    | gurugram |    7654 |
+|  3 | bava    | bihar    |    3455 |
++----+---------+----------+---------+
+3 rows in set (0.000 sec)
+
+MariaDB [shubham]> 
