@@ -6,15 +6,7 @@ Query OK, 1 row affected (0.027 sec)
 MariaDB [(none)]> use shubham;
 Database changed
 MariaDB [shubham]> create table students;
-ERROR 1113 (42000): A table must have at least 1 column
-MariaDB [shubham]> (
-    ->     -> id int not NULL,
-    ->     -> name varchar(100) not null,
-    ->     -> phone_no not null,
-    -> ;
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-> id int not NULL,
-    -> name varchar(100) not null,
-    -> phone_no not null,' at line 2
+
 MariaDB [shubham]> create table employee(
     -> id int not null,
     -> name varchar(100) not null,
@@ -33,8 +25,6 @@ MariaDB [shubham]> show tables;
 +-------------------+
 1 row in set (0.008 sec)
 
-MariaDB [shubham]> desc tables;
-ERROR 1146 (42S02): Table 'shubham.tables' doesn't exist
 MariaDB [shubham]> desc employee;
 +---------+--------------+------+-----+---------+-------+
 | Field   | Type         | Null | Key | Default | Extra |
